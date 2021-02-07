@@ -37,7 +37,10 @@ RUN mkdir /workspace && \
     pip install en_vectors_web_lg-2.1.0.tar.gz && \
     rm en_vectors_web_lg-2.1.0.tar.gz && \
     cd /
-    
+
+# custom downloads
+RUN python -m spacy download en_core_web_lg
+
 # delete openvqa repo
 RUN rm -r /workspace/openvqa
 
