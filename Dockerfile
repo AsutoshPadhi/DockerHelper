@@ -29,7 +29,8 @@ RUN conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
 # RUN pip install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0
 
 # clone and install openvqa dependencies
-RUN pip install -r requirements.txt && \
+RUN pip install numpy >= 1.16.2 && \
+    pip install spacy >= 2.0.18 && \
     wget https://github.com/explosion/spacy-models/releases/download/en_vectors_web_lg-2.1.0/en_vectors_web_lg-2.1.0.tar.gz -O en_vectors_web_lg-2.1.0.tar.gz && \
     pip install en_vectors_web_lg-2.1.0.tar.gz
 
