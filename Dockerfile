@@ -32,7 +32,8 @@ RUN conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
 RUN pip install numpy && \
     pip install spacy && \
     wget https://github.com/explosion/spacy-models/releases/download/en_vectors_web_lg-2.1.0/en_vectors_web_lg-2.1.0.tar.gz -O en_vectors_web_lg-2.1.0.tar.gz && \
-    pip install en_vectors_web_lg-2.1.0.tar.gz
+    pip install en_vectors_web_lg-2.1.0.tar.gz && \
+    pip install bert-score
 
 # custom downloads
 RUN python -m spacy download en_core_web_lg
